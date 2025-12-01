@@ -15,6 +15,7 @@ public class TestDialogue : MonoBehaviour
     private void Start() {
         _currentNode = GetNode("start");
         _lineIndex = 0;
+        ShowCurrentLine();
     }
 
     private DialogueNode GetNode(string nodeID){
@@ -23,9 +24,10 @@ public class TestDialogue : MonoBehaviour
         return node;
     }
 
-    private void ShowCurrentLine(){
+    public void ShowCurrentLine(){
         var line = _currentNode.lines[_lineIndex];
         nameText.text = line.characterName;
         lineText.text = line.sentence;
+        _lineIndex++;
     }
 }
