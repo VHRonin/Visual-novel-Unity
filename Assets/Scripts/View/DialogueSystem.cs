@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -24,11 +25,31 @@ public class DialogueSystem : MonoBehaviour
         return node;
     }
 
-    public void ShowCurrentLine(){
+    private void ShowCurrentLine(){
         if (_lineIndex >= _currentNode.lines.Length) return;
         var line = _currentNode.lines[_lineIndex];
-        nameText.text = line.character.ToString();
+        nameText.text = line.characterName.ToString();
         lineText.text = line.sentence;
+        StopAllCoroutines();
+        StartCoroutine(TypeLine(line));
+    }
+
+    private IEnumerator TypeLine(DialogueLine line, float tps = 0.02f){
+        lineText.text = "";
+        string fullLine = line.sentence;
+
+        foreach (char letter in fullLine.ToCharArray())
+        {
+            lineText.text += letter;
+            
+            yield return new WaitForSeconds(tps);
+        }
+    }
+
+    public void Next(){
         _lineIndex++;
+        if (_lineIndex <= _currentNode.lines.Length){
+            ShowCurrentLine();
+        }
     }
 }

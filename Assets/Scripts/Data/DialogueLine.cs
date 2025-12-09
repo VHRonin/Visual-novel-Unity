@@ -15,8 +15,8 @@ public enum Characters
 [System.Serializable]
 public class DialogueLine
 {
-    public string characterName;
-    public Characters character;
+    // public string characterName;
+    public Characters characterName;
     public string sentence;
     public Emotion emotion;
 }
