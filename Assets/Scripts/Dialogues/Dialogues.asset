@@ -30,3 +30,10 @@ MonoBehaviour:
       sentence: "\u041D\u0443 \u0435\u043C\u0430\u0435."
       emotion: 0
     choices: []
+    position: {x: 0, y: 0}
+    size: {x: 240, y: 150}
+  - id: node_1
+    lines: []
+    choices: []
+    position: {x: 200, y: 200}
+    size: {x: 240, y: 120}

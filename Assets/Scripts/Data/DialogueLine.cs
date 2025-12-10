@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 public enum Emotion{
     Neutral,
     Happy,
@@ -17,6 +19,6 @@ public class DialogueLine
 {
     // public string characterName;
     public Characters characterName;
-    public string sentence;
+    [TextArea(3, 5)] public string sentence;
     public Emotion emotion;
 }
