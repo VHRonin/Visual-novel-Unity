@@ -29,11 +29,10 @@ MonoBehaviour:
     - characterName: 1
       sentence: "\u041D\u0443 \u0435\u043C\u0430\u0435."
       emotion: 0
-    choices: []
+    choices:
+    - choiceText: "\u0425\u043E\u0447\u0443 \u043F\u0435\u0440\u0441\u0438\u043A\u043E\u0432."
+      nextId: 
+    - choiceText: "\u0425\u043E\u0447\u0443 \u0430\u043D\u0430\u043D\u0430\u0441\u043E\u0432."
+      nextId: 
     position: {x: 0, y: 0}
     size: {x: 240, y: 150}
-  - id: node_1
-    lines: []
-    choices: []
-    position: {x: 200, y: 200}
-    size: {x: 240, y: 120}
