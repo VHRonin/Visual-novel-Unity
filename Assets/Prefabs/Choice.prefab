@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 3974494644029722519}
   - component: {fileID: 1664642976048156903}
   - component: {fileID: 7422892879375055870}
+  - component: {fileID: 8200510643759136437}
   m_Layer: 5
   m_Name: Choice
   m_TagString: Untagged
@@ -256,4 +257,30 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1664642976048156903}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8200510643759136437}
+        m_TargetAssemblyTypeName: ChoiceData, Assembly-CSharp
+        m_MethodName: OnChoiceSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8200510643759136437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7714265527099338149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8903ce979d0385e44b09c1d47f7b8151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChoiceData
+  nextId: 
+  dialogueSystem: {fileID: 0}

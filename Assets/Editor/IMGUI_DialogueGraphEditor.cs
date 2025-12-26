@@ -14,14 +14,14 @@ using UnityEngine;
 public class IMGUI_DialogueGraphEditor : EditorWindow
 {
     private Dialogues dialoguesAsset;
-    private Vector2 canvasDrag;
+    // private Vector2 canvasDrag;
     private Vector2 canvasOffset;
-    private float canvasZoom = 1f; // unused for now, kept for extension
+    // private float canvasZoom = 1f; // unused for now, kept for extension
     private Vector2 inspectorScroll;
 
     // Selection and interaction
     private DialogueNode selectedNode;
-    private DialogueNode hoveredNode;
+    // private DialogueNode hoveredNode;
     private DialogueNode dragNode; // node currently being dragged via window system
 
     // Connection dragging

@@ -38,6 +38,7 @@ public class DialogueSystem : MonoBehaviour
             return;
         }
         var line = _currentNode.lines[_lineIndex];
+        CharacterManager.Instance.ApplyLine(line);
         nameText.text = line.characterName.ToString();
         lineText.text = line.sentence;
         StopAllCoroutines();
@@ -70,6 +71,20 @@ public class DialogueSystem : MonoBehaviour
             GameObject choiceButton = Instantiate(_choiceButtonPrefab, _choicesContainer);
             TMP_Text buttonText = choiceButton.transform.GetChild(0).GetComponent<TMP_Text>();
             buttonText.text = _currentNode.choices[i].choiceText;
+            choiceButton.GetComponent<ChoiceData>().nextId = _currentNode.choices[i].nextId;
         }
+    }
+
+    public void OnChoiceSelected(string nextId){
+        _currentNode = GetNode(nextId);
+        _lineIndex = 0;
+
+        for (int i = 0; i < _choicesContainer.childCount; i++){
+            Destroy(_choicesContainer.GetChild(i).gameObject);
+        }
+
+        _choicesPanel.SetActive(false);
+
+        ShowCurrentLine();
     }
 }

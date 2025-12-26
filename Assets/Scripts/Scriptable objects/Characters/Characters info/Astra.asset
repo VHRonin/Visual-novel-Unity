@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400f24fd25716284a9cd57576da475d9, type: 3}
+  m_Name: Astra
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterData
+  character: 0
+  displayName: "\u0410\u0441\u0442\u0440\u0430"
+  emotions:
+  - emotion: 0
+    sprite: {fileID: 6818227228838165076, guid: 45f5506eb71d5004ab9dde617714747e, type: 3}
