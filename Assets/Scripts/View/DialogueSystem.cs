@@ -7,16 +7,23 @@ public class DialogueSystem : MonoBehaviour
 {
     public TMP_Text nameText;
     public TMP_Text lineText;
-
     public Dialogues dialogues;
-
     private DialogueNode _currentNode;
     private int _lineIndex;
+    [SerializeField] private DialogueUI _dialogueUI;
+    private DialogueContext _context;
 
     [Header("Choices settings")]
     [SerializeField] private GameObject _choicesPanel;
     [SerializeField] private Transform _choicesContainer;
     [SerializeField] private GameObject _choiceButtonPrefab;
+
+    private void Awake() {
+        _context = new DialogueContext {
+            characterManager = CharacterManager.Instance,
+            dialogueUI = _dialogueUI
+        };
+    }
 
     private void Start() {
         _currentNode = GetNode("start");
@@ -28,6 +35,16 @@ public class DialogueSystem : MonoBehaviour
         var node = Array.Find(dialogues.dialogueNodes, n => n.id == nodeID);
 
         return node;
+    }
+
+    private IEnumerator RunNode(DialogueNode node){
+          foreach (var dialogueEvent in node.events)
+        {
+            yield return dialogueEvent.Execute(_context);
+        }
+
+        if (node.choices != null && node.choices.Length > 0)
+            ShowChoices();
     }
 
     private void ShowCurrentLine(){
