@@ -27,6 +27,9 @@ MonoBehaviour:
       nextId: node_1
     - choiceText: "\u041A\u0442\u043E \u0442\u044B?"
       nextId: node_2
+    events:
+    - rid: 7997109353198911553
+    - rid: 7997109353198911554
     position: {x: 0, y: 0}
     size: {x: 240, y: 150}
   - id: node_1
@@ -36,6 +39,8 @@ MonoBehaviour:
         \u0436\u0435?"
       emotion: 0
     choices: []
+    events:
+    - rid: 7997109353198911555
     position: {x: 10.400009, y: 205.6}
     size: {x: 240, y: 120}
   - id: node_2
@@ -47,5 +52,34 @@ MonoBehaviour:
         \u0434\u043E\u043B\u0433\u0438\u043C."
       emotion: 0
     choices: []
-    position: {x: 315.19998, y: 80.799995}
+    events:
+    - rid: 7997109353198911556
+    position: {x: 316.8, y: 80.79999}
     size: {x: 240, y: 120}
+  references:
+    version: 2
+    RefIds:
+    - rid: 7997109353198911553
+      type: {class: SayEvent, ns: , asm: Assembly-CSharp}
+      data:
+        character: 0
+        text: "\u0422\u0435\u0441\u0442 1"
+        emotion: 0
+    - rid: 7997109353198911554
+      type: {class: SayEvent, ns: , asm: Assembly-CSharp}
+      data:
+        character: 1
+        text: "\u0422\u0435\u0441\u0442 2"
+        emotion: 0
+    - rid: 7997109353198911555
+      type: {class: SayEvent, ns: , asm: Assembly-CSharp}
+      data:
+        character: 0
+        text: "\u041D\u0443 \u0445\u0437"
+        emotion: 0
+    - rid: 7997109353198911556
+      type: {class: SayEvent, ns: , asm: Assembly-CSharp}
+      data:
+        character: 1
+        text: "\u0415\u043C\u0430\u0435"
+        emotion: 0

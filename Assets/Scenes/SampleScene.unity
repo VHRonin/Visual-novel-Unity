@@ -1682,7 +1682,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274619897}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1695,7 +1695,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6818227228838165076, guid: 45f5506eb71d5004ab9dde617714747e, type: 3}
+  m_Sprite: {fileID: -2687027676864577796, guid: 30fda582e251afe42aab33be1dd30505, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1772,7 +1772,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357919548}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1829,6 +1829,7 @@ GameObject:
   - component: {fileID: 1604760588}
   - component: {fileID: 1604760587}
   - component: {fileID: 1604760589}
+  - component: {fileID: 1604760590}
   m_Layer: 5
   m_Name: DialogueBar
   m_TagString: Untagged
@@ -1910,9 +1911,24 @@ MonoBehaviour:
   nameText: {fileID: 440072762}
   lineText: {fileID: 80375991}
   dialogues: {fileID: 11400000, guid: cdba7e332d9e7994fb404ef40639ea2b, type: 2}
+  _dialogueUI: {fileID: 1604760590}
   _choicesPanel: {fileID: 1906321206}
   _choicesContainer: {fileID: 63031538}
   _choiceButtonPrefab: {fileID: 7714265527099338149, guid: acdd82e75a5f3894db42679cdec41364, type: 3}
+--- !u!114 &1604760590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604760585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afeef2ac38ec40b4cbb28df06f046196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueUI
+  nameText: {fileID: 440072762}
+  lineText: {fileID: 80375991}
 --- !u!1 &1822459566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,6 +1941,7 @@ GameObject:
   - component: {fileID: 1822459570}
   - component: {fileID: 1822459569}
   - component: {fileID: 1822459568}
+  - component: {fileID: 1822459571}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1995,9 +2012,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1604760589}
-        m_TargetAssemblyTypeName: DialogueSystem, Assembly-CSharp
-        m_MethodName: Next
+      - m_Target: {fileID: 1822459571}
+        m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
+        m_MethodName: OnNextClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2045,6 +2062,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822459566}
   m_CullTransparentMesh: 1
+--- !u!114 &1822459571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822459566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e5c72165e38fa43a3a00bf7b952089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NextButton
+  dialogueUI: {fileID: 1604760590}
 --- !u!1 &1906321206
 GameObject:
   m_ObjectHideFlags: 0

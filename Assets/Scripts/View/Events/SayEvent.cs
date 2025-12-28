@@ -1,0 +1,17 @@
+using System.Collections;
+using UnityEngine;
+
+[System.Serializable]
+public class SayEvent : DialogueEvent
+{
+    public Characters character;
+    [TextArea(3, 5)] public string text;
+    public Emotion emotion;
+
+    public override IEnumerator Execute(DialogueContext context)
+    {
+        context.characterManager.ShowCharacter(character, emotion);
+
+        yield return context.dialogueUI.ShowLine(character, text);
+    }
+}

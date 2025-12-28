@@ -7,6 +7,7 @@ public class DialogueNode
     public string id;
     public DialogueLine[] lines;
     public DialogueChoice[] choices;
+    [SerializeReference]
     public List<DialogueEvent> events;
 
     public Vector2 position;

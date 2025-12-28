@@ -38,8 +38,6 @@ public class CharacterManager : MonoBehaviour
 
         if (centerSlot.image.enabled)
             activeCharacters[centerSlot.currentCharacter] = centerSlot;
-
-        Debug.Log(leftSlot.image.enabled);
     }
 
     public void ApplyLine(DialogueLine line)

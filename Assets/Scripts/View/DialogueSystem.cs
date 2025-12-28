@@ -28,7 +28,8 @@ public class DialogueSystem : MonoBehaviour
     private void Start() {
         _currentNode = GetNode("start");
         _lineIndex = 0;
-        ShowCurrentLine();
+        // ShowCurrentLine();
+        StartCoroutine(RunNode(_currentNode));
     }
 
     private DialogueNode GetNode(string nodeID){
@@ -37,7 +38,7 @@ public class DialogueSystem : MonoBehaviour
         return node;
     }
 
-    private IEnumerator RunNode(DialogueNode node){
+    private IEnumerator RunNode(DialogueNode node){ // новый метод
           foreach (var dialogueEvent in node.events)
         {
             yield return dialogueEvent.Execute(_context);
@@ -102,6 +103,7 @@ public class DialogueSystem : MonoBehaviour
 
         _choicesPanel.SetActive(false);
 
-        ShowCurrentLine();
+        // ShowCurrentLine();
+        StartCoroutine(RunNode(_currentNode));
     }
 }
