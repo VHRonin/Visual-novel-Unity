@@ -10,7 +10,8 @@ public enum Emotion{
 public enum Characters
 {
     Астра,
-    Сигурд
+    Сигурд,
+    Рассказчик
 }
 
 

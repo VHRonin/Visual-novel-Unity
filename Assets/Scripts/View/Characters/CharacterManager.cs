@@ -55,14 +55,14 @@ public class CharacterManager : MonoBehaviour
         }
 
         // На сцене НИКОГО → центр
-        if (activeCharacters.Count == 0)
+        if (activeCharacters.Count == 0 && character != Characters.Рассказчик)
         {
             PlaceCharacter(character, emotion, centerSlot);
             return;
         }
 
         // На сцене ОДИН персонаж
-        if (activeCharacters.Count == 1)
+        if (activeCharacters.Count == 1 && character != Characters.Рассказчик)
         {
             // Если он в центре — сдвигаем влево
             if (centerSlot.image.enabled)
