@@ -7,12 +7,7 @@ public enum Emotion{
     Angry
 }
 
-public enum Characters
-{
-    Астра,
-    Сигурд,
-    Рассказчик
-}
+
 
 
 [System.Serializable]

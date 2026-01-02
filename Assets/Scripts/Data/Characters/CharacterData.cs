@@ -4,9 +4,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CharacterData", menuName = "Scriptable Objects/CharacterData")]
 public class CharacterData : ScriptableObject
 {
-    public Characters character;   // enum персонажей
+    public Characters character;
     public string displayName;
     public List<EmotionSprite> emotions;
+    public float baseHeight;
+    public Vector2 bodyOffset;
 
     public Sprite GetSprite(Emotion emotion)
     {

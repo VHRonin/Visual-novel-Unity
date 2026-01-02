@@ -82,7 +82,7 @@ public class CharacterManager : MonoBehaviour
         if (data == null) return;
 
         slot.currentCharacter = character;
-        slot.SetSprite(data.GetSprite(emotion));
+        slot.SetSprite(data.GetSprite(emotion), data);
         activeCharacters[character] = slot;
     }
 
@@ -91,7 +91,7 @@ public class CharacterManager : MonoBehaviour
         var data = database.GetCharacter(character);
         if (data == null) return;
 
-        slot.SetSprite(data.GetSprite(emotion));
+        slot.SetSprite(data.GetSprite(emotion), data);
     }
 
     private void MoveCenterToLeft()
@@ -101,8 +101,10 @@ public class CharacterManager : MonoBehaviour
 
         centerSlot.Clear();
 
+        var data = database.GetCharacter(character);
+
         leftSlot.currentCharacter = character;
-        leftSlot.SetSprite(sprite);
+        leftSlot.SetSprite(sprite, data);
 
         activeCharacters[character] = leftSlot;
     }

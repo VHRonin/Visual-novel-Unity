@@ -17,3 +17,5 @@ MonoBehaviour:
   emotions:
   - emotion: 0
     sprite: {fileID: 4145599232879159328, guid: ca34ac7464dd8cd43a5ab1d7331a3700, type: 3}
+  baseHeight: 2003
+  bodyOffset: {x: 0, y: 0}
