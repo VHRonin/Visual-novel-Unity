@@ -8,6 +8,7 @@ public class ExitCharacterEvent : DialogueEvent
 
     public override IEnumerator Execute(DialogueContext context)
     {
-        throw new System.NotImplementedException();
+        context.characterManager.ExitCharacter(character);
+        yield return null;
     }
 }

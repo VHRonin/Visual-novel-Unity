@@ -45,6 +45,34 @@ public class CharacterManager : MonoBehaviour
         ShowCharacter(line.characterName, line.emotion);
     }
 
+    public void EnterCharacter(Characters character, Emotion emotion, CharacterSlotType slotType){
+        var data = database.GetCharacter(character);
+        if (data == null) return;
+
+        var slot = GetSlot(slotType);
+
+        slot.currentCharacter = character;
+
+        slot.SetSprite(data.GetSprite(emotion), data);
+        activeCharacters[character] = slot;
+    }
+
+    public void ExitCharacter(Characters character){
+        if (!activeCharacters.TryGetValue(character, out var slot)) return;
+
+        slot.Clear();
+        activeCharacters.Remove(character);
+    }
+
+    public CharacterSlot GetSlot(CharacterSlotType slotType){
+        return slotType switch{
+            CharacterSlotType.Left => leftSlot,
+            CharacterSlotType.Center => centerSlot,
+            CharacterSlotType.Right => rightSlot,
+            _ => centerSlot
+        };
+    }
+
     public void ShowCharacter(Characters character, Emotion emotion)
     {
         // Персонаж уже на сцене → меняем эмоцию

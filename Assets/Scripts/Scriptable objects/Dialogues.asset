@@ -28,10 +28,13 @@ MonoBehaviour:
     - choiceText: "\u041A\u0442\u043E \u0442\u044B?"
       nextId: asking
     events:
+    - rid: 8466947722205986887
     - rid: 7997109353198911553
+    - rid: 8466947722205986889
     - rid: 7997109353198911554
     - rid: 7997109378020278355
     - rid: 7997109378020278337
+    - rid: 8466947722205986890
     - rid: 7997109382275137601
     position: {x: 55.99997, y: 34.4}
     size: {x: 240, y: 150}
@@ -77,7 +80,7 @@ MonoBehaviour:
     - rid: 7997109353198911554
       type: {class: SayEvent, ns: , asm: Assembly-CSharp}
       data:
-        character: 3
+        character: 1
         text: "\u041D\u0443 \u043F\u0440\u0438\u0432\u0435\u0442."
         emotion: 0
     - rid: 7997109353198911555
@@ -158,3 +161,19 @@ MonoBehaviour:
           \u041D\u0435\u0432\u0435\u0436\u043B\u0438\u0432\u043E, \u0437\u043D\u0430\u0435\u0448\u044C
           \u043B\u0438."
         emotion: 0
+    - rid: 8466947722205986887
+      type: {class: EnterCharacterEvent, ns: , asm: Assembly-CSharp}
+      data:
+        character: 0
+        emotion: 0
+        slotType: 1
+    - rid: 8466947722205986889
+      type: {class: EnterCharacterEvent, ns: , asm: Assembly-CSharp}
+      data:
+        character: 1
+        emotion: 0
+        slotType: 2
+    - rid: 8466947722205986890
+      type: {class: ExitCharacterEvent, ns: , asm: Assembly-CSharp}
+      data:
+        character: 0

@@ -27,7 +27,8 @@ public class DialoguesEventGraphEditor : EditorWindow
     private static readonly Type[] availableEventTypes = new Type[]
     {
         typeof(SayEvent),
-        typeof(ExitCharacterEvent)
+        typeof(ExitCharacterEvent),
+        typeof(EnterCharacterEvent)
         // add your other DialogueEvent subclasses here
     };
 

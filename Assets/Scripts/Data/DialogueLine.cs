@@ -1,14 +1,6 @@
 
 using UnityEngine;
 
-public enum Emotion{
-    Neutral,
-    Happy,
-    Angry
-}
-
-
-
 
 [System.Serializable]
 public class DialogueLine

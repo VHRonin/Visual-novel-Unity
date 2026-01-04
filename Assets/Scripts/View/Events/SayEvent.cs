@@ -10,7 +10,7 @@ public class SayEvent : DialogueEvent
 
     public override IEnumerator Execute(DialogueContext context)
     {
-        context.characterManager.ShowCharacter(character, emotion);
+        // context.characterManager.ShowCharacter(character, emotion); // эту строчку нужно удалить, чтобы контррлировать всё через EnterCharacter и ExitCharacter
 
         yield return context.dialogueUI.ShowLine(character, text);
     }
