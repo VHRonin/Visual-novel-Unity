@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TapEffect
   duration: 0.3
-  endRadius: 0.35
+  endRadius: 0.24
   startScale: 0.8
   endScale: 1.2
   ease:

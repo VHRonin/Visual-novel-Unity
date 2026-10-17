@@ -34,7 +34,6 @@ MonoBehaviour:
     - rid: 7997109353198911554
     - rid: 7997109378020278355
     - rid: 7997109378020278337
-    - rid: 8466947722205986890
     - rid: 7997109382275137601
     position: {x: 55.99997, y: 34.4}
     size: {x: 240, y: 150}
@@ -173,7 +172,3 @@ MonoBehaviour:
         character: 1
         emotion: 0
         slotType: 2
-    - rid: 8466947722205986890
-      type: {class: ExitCharacterEvent, ns: , asm: Assembly-CSharp}
-      data:
-        character: 0

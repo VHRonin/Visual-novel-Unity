@@ -1,0 +1,65 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="GameMenu.uss" />
+ 
+    <ui:VisualElement name="root" class="root">
+        <ui:VisualElement class="header">
+            <ui:Label text="✦ ETHERFALL" class="logo" />
+            <ui:Label text="CHAPTER 01  •  THE AWAKENING"
+                      class="chapter" />
+        </ui:VisualElement>
+ 
+        <ui:VisualElement class="content">
+            <ui:VisualElement class="hero-card">
+                <ui:Label text="YOUR ADVENTURER"
+                          class="eyebrow" />
+                <ui:Label name="hero-name" text="Kael Veyron"
+                          class="hero-name" />
+                <ui:Label text="WANDERER • LEVEL 12"
+                          class="subtitle" />
+ 
+                <ui:VisualElement class="stat">
+                    <ui:Label text="HP" class="stat-label" />
+                    <ui:VisualElement class="bar">
+                        <ui:VisualElement name="hp-fill"
+                                          class="hp-fill" />
+                    </ui:VisualElement>
+                    <ui:Label name="hp-text" text="85 / 100"
+                              class="stat-value" />
+                </ui:VisualElement>
+ 
+                <ui:VisualElement class="stat">
+                    <ui:Label text="MP" class="stat-label" />
+                    <ui:VisualElement class="bar">
+                        <ui:VisualElement name="mp-fill"
+                                          class="mp-fill" />
+                    </ui:VisualElement>
+                    <ui:Label name="mp-text" text="42 / 60"
+                              class="stat-value" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+ 
+            <ui:VisualElement class="quest-card">
+                <ui:Label text="CURRENT QUEST"
+                          class="eyebrow" />
+                <ui:Label text="Whispers in the Fog"
+                          class="quest-title" />
+                <ui:Label text="Find the source of the strange lights
+in the ruins beyond the forest."
+                          class="quest-description" />
+                <ui:Label text="✦  REWARD: 250 GOLD"
+                          class="reward" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+ 
+        <ui:VisualElement class="footer">
+            <ui:Button name="continue-btn"
+                       text="CONTINUE" class="primary-btn" />
+            <ui:Button name="rest-btn"
+                       text="REST" class="secondary-btn" />
+            <ui:Button name="exit-btn"
+                       text="EXIT" class="secondary-btn" />
+            <ui:Label name="status" text="Ready for adventure."
+                      class="status" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,61 +1,51 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem; // новая система
 
 public class TapSpawner : MonoBehaviour
 {
     [Header("Tap Effect Prefab")]
-    public GameObject tapEffectPrefab;  // твой UI Image с TapEffect.cs
-    public RectTransform canvasRect;    // Canvas, куда будем спавнить
+    public GameObject tapEffectPrefab;
+    public RectTransform canvasRect;
 
     [Header("Options")]
-    public Camera uiCamera;             // если Canvas Screen Space - Camera
-    public bool ignoreIfPointerOverUI = true;  // не спавнить при тапе по кнопке
+    public Camera uiCamera;  // для Screen Space - Camera
+    public bool ignoreIfPointerOverUI = true;
 
     void Update()
     {
-        // Touch для мобильных
-        if (Input.touchCount > 0)
+        // для сенсорного ввода
+        if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed)
         {
-            foreach (Touch touch in Input.touches)
+            var touch = Touchscreen.current.primaryTouch;
+            if (touch.press.wasPressedThisFrame)
             {
-                if (touch.phase == TouchPhase.Began)
-                    TrySpawnAtScreenPos(touch.position);
+                TrySpawnAtScreenPos(touch.position.ReadValue());
             }
-            return;
         }
 
-        // Mouse для теста в редакторе
-        if (Input.GetMouseButtonDown(0))
+        // для мыши (редактор)
+        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
-            TrySpawnAtScreenPos(Input.mousePosition);
+            TrySpawnAtScreenPos(Mouse.current.position.ReadValue());
         }
     }
 
     private void TrySpawnAtScreenPos(Vector2 screenPos)
     {
-        if (ignoreIfPointerOverUI && EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-            return;
+        // if (ignoreIfPointerOverUI && EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        //     return;
 
         Vector2 localPoint;
         bool converted;
-
-        // if (canvasRect.renderMode == UnityEngine.RenderMode.ScreenSpaceOverlay)
-        // {
-        //     converted = RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPos, null, out localPoint);
-        // }
-        // else
-        // {
-        //     converted = RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPos, uiCamera, out localPoint);
-        // }
-
+        
         converted = RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPos, uiCamera, out localPoint);
 
         if (!converted) return;
 
-        // спавним префаб
         GameObject go = Instantiate(tapEffectPrefab, canvasRect);
         RectTransform rt = go.GetComponent<RectTransform>();
         if (rt != null)
-            rt.anchoredPosition = localPoint;  // ставим по тапу
+            rt.anchoredPosition = localPoint;
     }
 }
